@@ -1,0 +1,638 @@
+2024-01-08 14:50:37 [INFO] Check if the new message is related to the conversation: False
+2024-01-08 14:50:37 [INFO] Question: total sales of Dragon Cement Industries Pvt. Ltd. from 2020
+2024-01-08 14:50:37 [INFO] Running PandasAI with openai LLM...
+2024-01-08 14:50:37 [INFO] Prompt ID: 8e9c9a9e-d4e5-48c2-95a0-5897acb7e868
+2024-01-08 14:50:37 [INFO] Executing Step 0: CacheLookup
+2024-01-08 14:50:37 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 14:50:37 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total sales of Dragon Cement Industries Pvt. Ltd. from 2020
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 14:50:37 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 14:50:50 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Convert the Inv Dt column to datetime
+dfs[0]['Inv Dt'] = pd.to_datetime(dfs[0]['Inv Dt'])
+
+# Filter the dataframe for Dragon Cement Industries Pvt. Ltd. and year 2020
+df_filtered = dfs[0][(dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...') & (dfs[0]['Inv Dt'].dt.year == 2020)]
+
+# Calculate the total sales
+total_sales = df_filtered['Total'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_sales}
+            ```
+            
+2024-01-08 14:50:50 [INFO] Executing Step 3: CachePopulation
+2024-01-08 14:50:50 [INFO] Executing Step 4: CodeExecution
+2024-01-08 14:50:50 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 14:50:50 [INFO] 
+Code running:
+```
+dfs[0]['Inv Dt'] = pd.to_datetime(dfs[0]['Inv Dt'])
+df_filtered = dfs[0][(dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...') & (dfs[0]['Inv Dt'].dt.year == 2020)]
+total_sales = df_filtered['Total'].sum()
+result = {'type': 'number', 'value': total_sales}
+        ```
+2024-01-08 14:50:51 [INFO] Executing Step 5: ResultValidation
+2024-01-08 14:50:51 [INFO] Answer: {'type': 'number', 'value': 0.0}
+2024-01-08 14:50:51 [INFO] Executed in: 14.13925814628601s
+2024-01-08 14:50:51 [INFO] Executing Step 6: ResultParsing
+2024-01-08 14:51:52 [INFO] Check if the new message is related to the conversation: False
+2024-01-08 14:51:52 [INFO] Question: Dragon Cement Industries Pvt. Ltd.
+2024-01-08 14:51:52 [INFO] Running PandasAI with openai LLM...
+2024-01-08 14:51:52 [INFO] Prompt ID: af247c78-10a6-4dd8-a25b-17c7bf7f0419
+2024-01-08 14:51:52 [INFO] Executing Step 0: CacheLookup
+2024-01-08 14:51:52 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 14:51:53 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: Dragon Cement Industries Pvt. Ltd.
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 14:51:53 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 14:52:03 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+df = dfs[0]
+dragon_cement_data = df[df['Sold To Party Name'] == 'Dragon Cement Industri...']
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = { "type": "dataframe", "value": dragon_cement_data }
+            ```
+            
+2024-01-08 14:52:03 [INFO] Executing Step 3: CachePopulation
+2024-01-08 14:52:03 [INFO] Executing Step 4: CodeExecution
+2024-01-08 14:52:03 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 14:52:03 [INFO] 
+Code running:
+```
+df = dfs[0]
+dragon_cement_data = df[df['Sold To Party Name'] == 'Dragon Cement Industri...']
+result = {'type': 'dataframe', 'value': dragon_cement_data}
+        ```
+2024-01-08 14:52:03 [INFO] Executing Step 5: ResultValidation
+2024-01-08 14:52:03 [INFO] Answer: {'type': 'dataframe', 'value': Empty DataFrame
+Columns: [Inv Typ, Plant, Inv Dt, Sold To Party Name, Ship To Party Name, Area, Zone, Mat. Code, Inv Qt.(MT), Total]
+Index: []}
+2024-01-08 14:52:03 [INFO] Executed in: 10.721415758132935s
+2024-01-08 14:52:03 [INFO] Executing Step 6: ResultParsing
+2024-01-08 14:52:31 [INFO] Check if the new message is related to the conversation: False
+2024-01-08 14:52:31 [INFO] Question: total sales of Dragon Cement Industries Pvt. Ltd.
+2024-01-08 14:52:31 [INFO] Running PandasAI with openai LLM...
+2024-01-08 14:52:31 [INFO] Prompt ID: ab4f43f4-c279-4c07-adc1-b44a2187643a
+2024-01-08 14:52:31 [INFO] Executing Step 0: CacheLookup
+2024-01-08 14:52:31 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 14:52:32 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total sales of Dragon Cement Industries Pvt. Ltd.
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 14:52:32 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 14:52:40 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+total_sales = dfs[0][dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...']['Total'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_sales}
+            ```
+            
+2024-01-08 14:52:40 [INFO] Executing Step 3: CachePopulation
+2024-01-08 14:52:40 [INFO] Executing Step 4: CodeExecution
+2024-01-08 14:52:40 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 14:52:40 [INFO] 
+Code running:
+```
+total_sales = dfs[0][dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...']['Total'].sum()
+result = {'type': 'number', 'value': total_sales}
+        ```
+2024-01-08 14:52:40 [INFO] Executing Step 5: ResultValidation
+2024-01-08 14:52:40 [INFO] Answer: {'type': 'number', 'value': 0.0}
+2024-01-08 14:52:40 [INFO] Executed in: 8.695543050765991s
+2024-01-08 14:52:40 [INFO] Executing Step 6: ResultParsing
+2024-01-08 14:54:01 [INFO] Check if the new message is related to the conversation: True
+2024-01-08 14:54:01 [INFO] Question: total inv qt of  J & J Traders
+2024-01-08 14:54:01 [INFO] Running PandasAI with openai LLM...
+2024-01-08 14:54:01 [INFO] Prompt ID: 34b7d12f-727d-4a3f-909d-dd36f5f938bf
+2024-01-08 14:54:01 [INFO] Executing Step 0: CacheLookup
+2024-01-08 14:54:01 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 14:54:01 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+</dataframe>
+
+
+A: I am giving you a name 'Amrit Buddy'. Please act like a assistant of Amrit Cement Ltd. We are a ceme ...
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total inv qt of  J & J Traders
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 14:54:01 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 14:54:10 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Load the data
+df = dfs[0]
+
+# Filter the data for 'J & J Traders'
+filtered_df = df[df['Sold To Party Name'] == 'J & J Traders']
+
+# Calculate the total inv qt
+total_inv_qt = filtered_df['Inv Qt.(MT)'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_inv_qt}
+            ```
+            
+2024-01-08 14:54:10 [INFO] Executing Step 3: CachePopulation
+2024-01-08 14:54:11 [INFO] Executing Step 4: CodeExecution
+2024-01-08 14:54:11 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 14:54:11 [INFO] 
+Code running:
+```
+df = dfs[0]
+filtered_df = df[df['Sold To Party Name'] == 'J & J Traders']
+total_inv_qt = filtered_df['Inv Qt.(MT)'].sum()
+result = {'type': 'number', 'value': total_inv_qt}
+        ```
+2024-01-08 14:54:11 [INFO] Executing Step 5: ResultValidation
+2024-01-08 14:54:11 [INFO] Answer: {'type': 'number', 'value': 0}
+2024-01-08 14:54:11 [INFO] Executed in: 9.694168329238892s
+2024-01-08 14:54:11 [INFO] Executing Step 6: ResultParsing
+2024-01-08 14:59:22 [INFO] Check if the new message is related to the conversation: True
+2024-01-08 14:59:22 [INFO] Question: total inv qt of J & J TRADERS
+2024-01-08 14:59:22 [INFO] Running PandasAI with openai LLM...
+2024-01-08 14:59:22 [INFO] Prompt ID: fe4419b6-6794-443c-ada1-f7609a1aa1a5
+2024-01-08 14:59:22 [INFO] Executing Step 0: CacheLookup
+2024-01-08 14:59:22 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 14:59:22 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+</dataframe>
+
+
+A: I am giving you a name 'Amrit Buddy'. Please act like a assistant of Amrit Cement Ltd. We are a ceme ...
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total inv qt of J & J TRADERS
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 14:59:22 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 14:59:31 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+df = dfs[0]
+total_inv_qt = df[df['Sold To Party Name'] == 'J & J TRADERS']['Inv Qt.(MT)'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_inv_qt}
+            ```
+            
+2024-01-08 14:59:31 [INFO] Executing Step 3: CachePopulation
+2024-01-08 14:59:31 [INFO] Executing Step 4: CodeExecution
+2024-01-08 14:59:31 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 14:59:31 [INFO] 
+Code running:
+```
+df = dfs[0]
+total_inv_qt = df[df['Sold To Party Name'] == 'J & J TRADERS']['Inv Qt.(MT)'].sum()
+result = {'type': 'number', 'value': total_inv_qt}
+        ```
+2024-01-08 14:59:31 [INFO] Executing Step 5: ResultValidation
+2024-01-08 14:59:31 [INFO] Answer: {'type': 'number', 'value': 1227.0}
+2024-01-08 14:59:31 [INFO] Executed in: 9.561027765274048s
+2024-01-08 14:59:31 [INFO] Executing Step 6: ResultParsing
+2024-01-08 15:00:17 [INFO] Check if the new message is related to the conversation: False
+2024-01-08 15:00:17 [INFO] Question: Dragon Cement Industries Pvt. Ltd. total inv qt
+2024-01-08 15:00:17 [INFO] Running PandasAI with openai LLM...
+2024-01-08 15:00:17 [INFO] Prompt ID: 906f78de-b6b1-486b-9185-574ab8287afd
+2024-01-08 15:00:17 [INFO] Executing Step 0: CacheLookup
+2024-01-08 15:00:17 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 15:00:17 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: Dragon Cement Industries Pvt. Ltd. total inv qt
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 15:00:17 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 15:00:26 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+total_inv_qt = dfs[0][dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...']['Inv Qt.(MT)'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_inv_qt}
+            ```
+            
+2024-01-08 15:00:26 [INFO] Executing Step 3: CachePopulation
+2024-01-08 15:00:26 [INFO] Executing Step 4: CodeExecution
+2024-01-08 15:00:26 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 15:00:26 [INFO] 
+Code running:
+```
+total_inv_qt = dfs[0][dfs[0]['Sold To Party Name'] == 'Dragon Cement Industri...']['Inv Qt.(MT)'].sum()
+result = {'type': 'number', 'value': total_inv_qt}
+        ```
+2024-01-08 15:00:26 [INFO] Executing Step 5: ResultValidation
+2024-01-08 15:00:26 [INFO] Answer: {'type': 'number', 'value': 0}
+2024-01-08 15:00:26 [INFO] Executed in: 9.345308780670166s
+2024-01-08 15:00:26 [INFO] Executing Step 6: ResultParsing
+2024-01-08 15:02:15 [INFO] Check if the new message is related to the conversation: False
+2024-01-08 15:02:15 [INFO] Question: total sale of Aditi Industries
+2024-01-08 15:02:15 [INFO] Running PandasAI with openai LLM...
+2024-01-08 15:02:15 [INFO] Prompt ID: 3d88beb6-3d75-4b22-861b-5b753411ecbe
+2024-01-08 15:02:15 [INFO] Executing Step 0: CacheLookup
+2024-01-08 15:02:15 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 15:02:15 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total sale of Aditi Industries
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 15:02:15 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 15:02:24 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+total_sale = dfs[0][dfs[0]['Sold To Party Name'] == 'Aditi Industries']['Total'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_sale}
+            ```
+            
+2024-01-08 15:02:52 [INFO] Executing Step 3: CachePopulation
+2024-01-08 15:02:52 [INFO] Executing Step 4: CodeExecution
+2024-01-08 15:02:52 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 15:02:52 [INFO] 
+Code running:
+```
+total_sale = dfs[0][dfs[0]['Sold To Party Name'] == 'Aditi Industries']['Total'].sum()
+result = {'type': 'number', 'value': total_sale}
+        ```
+2024-01-08 15:02:52 [INFO] Executing Step 5: ResultValidation
+2024-01-08 15:02:52 [INFO] Answer: {'type': 'number', 'value': 328676149.0}
+2024-01-08 15:02:52 [INFO] Executed in: 36.59764504432678s
+2024-01-08 15:02:52 [INFO] Executing Step 6: ResultParsing
+2024-01-08 15:06:52 [INFO] Check if the new message is related to the conversation: True
+2024-01-08 15:06:52 [INFO] Question: total inv qt of Aditi Industries
+2024-01-08 15:06:52 [INFO] Running PandasAI with openai LLM...
+2024-01-08 15:06:52 [INFO] Prompt ID: 85bbdf39-acc1-4f68-9ddc-ba31820eab6e
+2024-01-08 15:06:52 [INFO] Executing Step 0: CacheLookup
+2024-01-08 15:06:52 [INFO] Executing Step 1: PromptGeneration
+2024-01-08 15:06:53 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+</dataframe>
+
+
+A: I am giving you a name 'Amrit Buddy'. Please act like a assistant of Amrit Cement Ltd. We are a ceme ...
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+```
+
+Q: total inv qt of Aditi Industries
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+
+
+Generate python code and return full updated code:
+2024-01-08 15:06:53 [INFO] Executing Step 2: CodeGenerator
+2024-01-08 15:07:02 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+
+# Load the dataframe
+df = dfs[0]
+
+# Filter the dataframe for Aditi Industries
+aditi_df = df[df['Sold To Party Name'] == 'Aditi Industries']
+
+# Calculate the total inv qt
+total_inv_qt = aditi_df['Inv Qt.(MT)'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_inv_qt}
+            ```
+            
+2024-01-08 15:07:02 [INFO] Executing Step 3: CachePopulation
+2024-01-08 15:07:02 [INFO] Executing Step 4: CodeExecution
+2024-01-08 15:07:02 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 15:07:02 [INFO] 
+Code running:
+```
+df = dfs[0]
+aditi_df = df[df['Sold To Party Name'] == 'Aditi Industries']
+total_inv_qt = aditi_df['Inv Qt.(MT)'].sum()
+result = {'type': 'number', 'value': total_inv_qt}
+        ```
+2024-01-08 15:07:02 [WARNING] Failed to execute code with a correction framework [retry number: 1]
+2024-01-08 15:07:02 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 46, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\helpers\code_manager.py", line 208, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11797, in sum
+    return NDFrame.sum(
+           ^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11501, in sum
+    return self._min_count_stat_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11483, in _min_count_stat_function
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\series.py", line 4816, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 93, in _f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 418, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 491, in newfunc
+    return func(values, axis=axis, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 631, in nansum
+    the_sum = values.sum(axis, dtype=dtype_sum)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\core\_methods.py", line 49, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+. Retrying
+2024-01-08 15:07:03 [INFO] Using prompt: <dataframe>
+dfs[0]:791309x10
+Inv Typ,Plant,Inv Dt,Sold To Party Name,Ship To Party Name,Area,Zone,Mat. Code,Inv Qt.(MT),Total
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.17,118446.0
+ZCL,UN01,21-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,20.05,76190.0
+ZCL,UN01,28-12-2012,Dragon Cement Industri...,Dragon Cement Industri...,CLINKER,CLINKER,CLINKER,31.18,118484.0
+</dataframe>
+
+The user asked the following question:
+A: I am giving you a name 'Amrit Buddy'. Please act like a assistant of Amrit Cement Ltd. We are a ceme ...
+Q: total inv qt of Aditi Industries
+
+You generated this python code:
+# TODO: import the required dependencies
+import pandas as pd
+
+# Load the dataframe
+df = dfs[0]
+
+# Filter the dataframe for Aditi Industries
+aditi_df = df[df['Sold To Party Name'] == 'Aditi Industries']
+
+# Calculate the total inv qt
+total_inv_qt = aditi_df['Inv Qt.(MT)'].sum()
+
+# Declare result var: type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+result = {"type": "number", "value": total_inv_qt}
+
+It fails with the following error:
+Traceback (most recent call last):
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\pipelines\smart_datalake_chat\code_execution.py", line 46, in execute
+    result = pipeline_context.query_exec_tracker.execute_func(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\helpers\query_exec_tracker.py", line 128, in execute_func
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandasai\helpers\code_manager.py", line 208, in execute_code
+    exec(code_to_run, environment)
+  File "<string>", line 3, in <module>
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11797, in sum
+    return NDFrame.sum(
+           ^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11501, in sum
+    return self._min_count_stat_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py", line 11483, in _min_count_stat_function
+    return self._reduce(
+           ^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\series.py", line 4816, in _reduce
+    return op(delegate, skipna=skipna, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 93, in _f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 418, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 491, in newfunc
+    return func(values, axis=axis, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\nanops.py", line 631, in nansum
+    the_sum = values.sum(axis, dtype=dtype_sum)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BISWAS\AppData\Local\Programs\Python\Python311\Lib\site-packages\numpy\core\_methods.py", line 49, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+
+
+Fix the python code above and return the new python code:
+2024-01-08 15:07:10 [INFO] Saving charts to C:\Users\BISWAS\Desktop\sales query\exports\charts\temp_chart.png
+2024-01-08 15:07:10 [INFO] 
+Code running:
+```
+df = dfs[0]
+aditi_df = df[df['Sold To Party Name'] == 'Aditi Industries']
+aditi_df['Inv Qt.(MT)'] = pd.to_numeric(aditi_df['Inv Qt.(MT)'], errors='coerce')
+total_inv_qt = aditi_df['Inv Qt.(MT)'].sum()
+result = {'type': 'number', 'value': total_inv_qt}
+        ```
+2024-01-08 15:07:11 [INFO] Executing Step 5: ResultValidation
+2024-01-08 15:07:11 [INFO] Answer: {'type': 'number', 'value': 72436.92}
+2024-01-08 15:07:11 [INFO] Executed in: 18.54114556312561s
+2024-01-08 15:07:11 [INFO] Executing Step 6: ResultParsing

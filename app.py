@@ -4,11 +4,9 @@ from pandasai.llm import OpenAI
 from pandasai import Agent
 from pandasai.responses.streamlit_response import StreamlitResponse
 
-openai_api_key = "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"
-
 st.set_page_config(layout="wide")
 data=pd.read_csv("final_refubrished_data.csv")
-# openai_api_key=st.secrets["OPENAI_API_KEY"]
+openai_api_key=st.secrets["OPENAI_API_KEY"]
 
 initial=True
 # if "open_ai_model" not in st.session_state:
