@@ -3,11 +3,16 @@ import pandas as pd
 from pandasai.llm import OpenAI
 from pandasai import Agent
 from pandasai.responses.streamlit_response import StreamlitResponse
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(layout="wide")
 data=pd.read_csv("final_refubrished_data.csv")
-openai_api_key=st.secrets["OPENAI_API_KEY"]
+# openai_api_key=st.secrets["OPENAI_API_KEY"]
+
 initial=True
 # if "open_ai_model" not in st.session_state:
 #     st.session_state["open_ai_model"]="gpt-3.5-turbo-0613"
